@@ -1,0 +1,12 @@
+*.py[cod]
+*.pytest_cache
+*.vscode
+*.code-workspace
+.idea
+log_files
+build/
+dist/
+*.egg-info/
+*venv/
+*test_results/
+*allure-results/
