@@ -7,4 +7,4 @@ def browser():
     driver = Chrome()
     driver.implicitly_wait(10)
     yield driver
-    driver.quit()
+    #driver.quit()
