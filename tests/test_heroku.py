@@ -15,6 +15,7 @@ def test_open_page(browser):
 
     element = browser.find_element(By.CSS_SELECTOR, 'a[href="/key_presses"]') #by the anchor with a specific attribute
     click_and_go_back(element, browser)
+
     element = browser.find_element(By.XPATH, '/html/body/div[2]/div/ul/li[18]/a') #xpath
     click_and_go_back(element, browser)
 
