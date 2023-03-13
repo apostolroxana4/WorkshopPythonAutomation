@@ -21,3 +21,6 @@ def test_open_page(browser):
 
     element = browser.find_element(By.CSS_SELECTOR, "li:nth-child(9) a") #the anchor in the 9th li
     click_and_go_back(element, browser)
+
+    element = browser.find_element(By.CSS_SELECTOR, "h2 + ul > li > a") #select the anchor from the first li in the ul that's after h2
+    click_and_go_back(element, browser)
