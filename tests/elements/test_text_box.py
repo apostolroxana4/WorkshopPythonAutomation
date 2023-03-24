@@ -30,12 +30,15 @@ class TestTextBox:
     browser = Driver.browser_initialization()
 
     def test_select_checkbox(self):
+        assert Elements().check_checkbox(self.browser)
         Elements().click_checkbox(self.browser)
 
     def test_expand_home(self):
+        assert Elements().check_home_title(self.browser)
         Elements().click_expand_home(self.browser)
 
     def test_click_documents(self):
+        assert Elements().check_documents_title(self.browser)
         Elements().click_documents(self.browser)
 
     def test_check_results(self):
