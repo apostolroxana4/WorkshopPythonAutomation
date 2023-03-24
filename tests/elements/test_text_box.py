@@ -4,6 +4,8 @@ from pages.elements.methods import Elements
 '''
 This method uses conftest, to get the browser fixture as a parameter
 '''
+
+
 # # method 1
 # class TestTextBox:
 #
@@ -21,9 +23,10 @@ This method uses conftest, to get the browser fixture as a parameter
 This method uses browser_initialization function from driver, while skipping conftest
 It also closes the browser as a last step, since we can't do that with browser function within conftest
 '''
+
+
 # method 2
 class TestTextBox:
-
     browser = Driver.browser_initialization()
 
     def test_select_checkbox(self):
