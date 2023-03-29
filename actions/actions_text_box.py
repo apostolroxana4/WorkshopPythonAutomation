@@ -17,5 +17,5 @@ class Actions(Elements):
         browser.find_element(By.ID, self.permanent_address_field_after_id).send_keys("Bd. Stefan cel Mare")
 
     def click_submit_button(self,browser):
-        browser.find_element(By.ID, self.submit_button_after_id).send_keys()
+        browser.find_element(By.ID, self.submit_button_after_id).click()
 
