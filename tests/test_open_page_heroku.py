@@ -4,7 +4,7 @@ from driver.driver import Driver
 
 
 def test_open_heroku_page(browser):
-    browser.get(Driver.URL)
+    browser.get(Driver.URL_HEROKU)
 
     btnDropDrown1 = browser.find_element('xpath', "//a[contains(text(),'A/B Testing')]")
     btnDropDrown1.click()
