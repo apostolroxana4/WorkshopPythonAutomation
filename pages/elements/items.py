@@ -5,6 +5,3 @@ class Items:
     documents_title = "//*[contains(text(),'Documents')]"
     documents = "span[class='rct-title']"
     result = 'result'
-
-
-items = Items()

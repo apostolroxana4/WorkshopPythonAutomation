@@ -1,33 +1,27 @@
 from selenium.webdriver.common.by import By
-from pages.elements.items import items
+from pages.elements.items import Items
 
 
 class Elements:
+    items = Items()
 
-    @staticmethod
-    def check_checkbox(browser):
-        return browser.find_element(By.XPATH, items.check_box).is_displayed()
+    def check_checkbox(self, browser):
+        return browser.find_element(By.XPATH, self.items.check_box).is_displayed()
 
-    @staticmethod
-    def click_checkbox(browser):
-        browser.find_element(By.XPATH, items.check_box).click()
+    def click_checkbox(self, browser):
+        browser.find_element(By.XPATH, self.items.check_box).click()
 
-    @staticmethod
-    def check_home_title(browser):
-        return browser.find_element(By.XPATH, items.home_title).is_displayed()
+    def check_home_title(self, browser):
+        return browser.find_element(By.XPATH, self.items.home_title).is_displayed()
 
-    @staticmethod
-    def click_expand_home(browser):
-        browser.find_element(By.CSS_SELECTOR, items.home_arrow).click()
+    def click_expand_home(self, browser):
+        browser.find_element(By.CSS_SELECTOR, self.items.home_arrow).click()
 
-    @staticmethod
-    def check_documents_title(browser):
-        return browser.find_element(By.XPATH, items.documents_title).is_displayed()
+    def check_documents_title(self, browser):
+        return browser.find_element(By.XPATH, self.items.documents_title).is_displayed()
 
-    @staticmethod
-    def click_documents(browser):
-        browser.find_elements(By.CSS_SELECTOR, items.documents)[2].click()
+    def click_documents(self, browser):
+        browser.find_elements(By.CSS_SELECTOR, self.items.documents)[2].click()
 
-    @staticmethod
-    def check_documents(browser):
-        return browser.find_element(By.ID, items.result).is_displayed()
+    def check_documents(self, browser):
+        return browser.find_element(By.ID, self.items.result).is_displayed()
