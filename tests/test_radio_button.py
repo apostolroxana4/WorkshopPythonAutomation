@@ -19,17 +19,14 @@ class TestRadioButton:
     browser = browser()
 
     def test_select_elements(self):
-        time.sleep(1)
         assert MainPageDemoQA().check_elements_is_visible(self.browser)
         MainPageDemoQA().click_elements(self.browser)
 
     def test_select_radio_button(self):
-        time.sleep(1)
         assert RadioButton().check_radio_button(self.browser)
         RadioButton().click_radio_button(self.browser)
 
     def test_yes_radio(self):
-        time.sleep(1)
         assert RadioButton().check_yes_radio(self.browser)
         RadioButton().click_yes_radio(self.browser)
 
