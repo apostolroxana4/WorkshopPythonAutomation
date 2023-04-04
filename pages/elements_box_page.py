@@ -1,4 +1,4 @@
-from pages.elements_text_box import ElementFromTextBox
+from pages.elements.elements_text_box import ElementFromTextBox
 from selenium.webdriver.common.by import By
 
 
