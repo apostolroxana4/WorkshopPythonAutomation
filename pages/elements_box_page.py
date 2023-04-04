@@ -27,5 +27,5 @@ class ElementsBoxPage:
         browser.find_element(By.XPATH, self.elements.submit_button).click()
 
     def check_submit_content(self, browser):
-        return browser.find_element(By.XPATH, self.elements.submit_content).is_displayed()
+        return browser.find_element(By.XPATH, self.elements.submit_content).is_enabled()
 
