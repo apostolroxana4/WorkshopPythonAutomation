@@ -9,3 +9,4 @@ def test_open_duckduckge(browser):
 
     search_input = browser.find_element('id', 'search_form_input_homepage')
     search_input.send_keys(PHRASE + Keys.RETURN)
+
