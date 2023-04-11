@@ -58,6 +58,14 @@ https://www.seleniumeasy.com/python/webdriver-tests-in-pytest-using-fixtures-and
 @pytest.mark.usefixtures("browser")
 class TestTextBox:
 
+    def test_verify_checkbox_visibility(self):
+        assert Elements().check_elements(self.driver)
+
+        if Elements().check_checkbox(self.driver):
+            pytest.skip()
+
+        Elements().click_elements(self.driver)
+
     def test_select_checkbox(self):
         assert Elements().check_checkbox(self.driver)
         Elements().click_checkbox(self.driver)
