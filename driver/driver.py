@@ -12,3 +12,4 @@ class Driver:
         driver.maximize_window()
         return driver
 
+
