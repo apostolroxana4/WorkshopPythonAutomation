@@ -1,3 +1,5 @@
+import time
+
 import pytest
 from driver.driver import Driver
 from pages.elements.methods import Elements
@@ -72,6 +74,11 @@ class TestTextBox:
 
     def test_expand_home(self):
         assert Elements().check_home_title(self.driver)
+        Elements().click_expand_home(self.driver)
+
+    @pytest.mark.xfail(reason='Documents is not visible after you refresh the page')
+    def test_preemptive_fail(self):
+        self.driver.refresh()
         Elements().click_expand_home(self.driver)
 
     def test_click_documents(self):
