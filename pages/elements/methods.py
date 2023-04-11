@@ -5,11 +5,17 @@ from pages.elements.items import Items
 class Elements:
     items = Items()
 
+    def check_elements(self, browser):
+        return browser.find_elements(By.XPATH, self.items.section_elements)[1].is_displayed()
+
+    def click_elements(self, browser):
+        browser.find_elementss(By.XPATH, self.items.section_elements)[1].click()
+
     def check_checkbox(self, browser):
-        return browser.find_element(By.XPATH, self.items.check_box).is_displayed()
+        return browser.find_element(By.XPATH, self.items.subsection_check_box).is_displayed()
 
     def click_checkbox(self, browser):
-        browser.find_element(By.XPATH, self.items.check_box).click()
+        browser.find_element(By.XPATH, self.items.subsection_check_box).click()
 
     def check_home_title(self, browser):
         return browser.find_element(By.XPATH, self.items.home_title).is_displayed()
