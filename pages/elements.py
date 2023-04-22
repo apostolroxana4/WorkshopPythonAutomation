@@ -28,6 +28,6 @@ class StepsElements(Elements):
         return (
                 (browser.find_element(By.ID, self.username) == username)
                 and (browser.find_element(By.XPATH, self.email) == email)
-                #and (browser.find_element(By.CSS_SELECTOR, self.current_address) == current_address)
+                and (browser.find_element(By.CSS_SELECTOR, self.current_address) == current_address)
                 and (browser.find_element(By.ID, self.permanent_address) == permanent_address)
                      )

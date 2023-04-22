@@ -3,10 +3,10 @@ from selenium.webdriver import Chrome
 from driver.driver import Driver
 
 
-@pytest.mark.usefixtures(scope="class")
-def setup():
+@pytest.fixture(scope="class")
+def browser():
     driver = Chrome()
     driver.implicitly_wait(10)
-    driver.get(Driver.URL)
-    driver.maximize_window()
-    return driver
+    #driver.get(Driver.URL_textbox)
+    yield driver
+    driver.quit()
