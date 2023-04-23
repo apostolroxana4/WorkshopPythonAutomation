@@ -3,6 +3,23 @@ from selenium.webdriver.common.by import By
 
 
 class Actions(Elements):
+    def check_elements_section(self, browser):
+        return browser.find_element(By.XPATH, self.section_elements).is_displayed()
+
+    def click_elements_section(self, browser):
+        browser.find_element(By.XPATH, self.section_elements).click()
+
+    def check_checkbox_subsection(self, browser):
+        return browser.find_element(By.XPATH, self.subsection_checkbox).is_displayed()
+
+    def click_checkbox_subsection(self, browser):
+        browser.find_element(By.XPATH, self.subsection_checkbox).click()
+
+    def check_home_item(self, browser):
+        return browser.find_element(By.XPATH, self.home_item).is_displayed()
+
+    def expand_home_item(self, browser):
+        browser.find_element(By.CLASS_NAME, self.expand_home).click()
 
     def username_field_visibility(self, browser):
         return browser.find_element(By.XPATH, self.username_field).is_displayed()
@@ -29,7 +46,7 @@ class Actions(Elements):
     def insert_value_for_permanent_address(self, browser, permanent_address):
         browser.find_element(By.ID, self.permanent_address).send_keys(permanent_address)
 
-    def click_submit_button(self,browser):
+    def click_submit_button(self, browser):
         browser.find_element(By.ID, self.submit_button).click()
 
 

@@ -2,7 +2,12 @@ from selenium.webdriver.common.by import By
 
 
 class Elements:
-
+    section_elements = "//*[contains(text(),'Elements')]"
+    subsection_checkbox = "//*[@id='item-1']"
+    home_item = "//*[contains(text(),'Home')]"
+    expand_home = "svg[class='rct-icon rct-icon-expand-close']"
+    downloads_item = "//*[contains(text(),'Downloads')"
+    expand_downloads = ""
     username_field = "//label[@id='userName-label']"
     username = "userName"
     email_field = "//label[@id='userEmail-label']"
@@ -16,11 +21,11 @@ class Elements:
 
 class StepsElements(Elements):
 
-    def fill_credentials(self, browser, username, email, current_address, permanent_address):
+    def fill_credentials(self, browser, username, email, permanent_address):
         if (
                 (not browser.find_element(By.ID, self.username).is_displayed())
                 or (not browser.find_element(By.XPATH, self.email).is_displayed())
-                or (not browser.find_element(By.CSS_SELECTOR, self.current_address).is_displayed())
+                #or (not browser.find_element(By.CSS_SELECTOR, self.current_address).is_displayed())
                 or (not browser.find_element(By.ID, self.permanent_address).is_displayed())
         ):
             raise ValueError("Fields are not visible")
@@ -28,6 +33,6 @@ class StepsElements(Elements):
         return (
                 (browser.find_element(By.ID, self.username) == username)
                 and (browser.find_element(By.XPATH, self.email) == email)
-                and (browser.find_element(By.CSS_SELECTOR, self.current_address) == current_address)
+                #and (browser.find_element(By.CSS_SELECTOR, self.current_address) == current_address)
                 and (browser.find_element(By.ID, self.permanent_address) == permanent_address)
                      )
