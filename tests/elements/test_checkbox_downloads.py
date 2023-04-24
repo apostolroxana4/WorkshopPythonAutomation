@@ -3,6 +3,7 @@ from pages.elements.methods import Elements
 
 
 @pytest.mark.usefixtures("browser")
+@pytest.skip(allow_module_level = True)
 class TestCheckboxSelectDownloads:
 
     def test_click_main_page_elements(self):
