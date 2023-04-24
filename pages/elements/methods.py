@@ -1,5 +1,4 @@
 import time
-
 from selenium.webdriver.common.by import By
 from pages.elements.items import Items
 
@@ -36,7 +35,8 @@ class Elements:
         browser.find_elements(By.CSS_SELECTOR, self.items.documents)[2].click()
 
     def check_documents_result(self, browser):
-        return browser.find_element(By.ID, self.items.result).is_displayed()
+        return (browser.find_element(By.ID, self.items.result).is_displayed() and
+                browser.find_elements(By.CSS_SELECTOR, self.items.documents_results)[9].is_displayed())
 
     def check_downloads_title(self, browser):
         return browser.find_element(By.XPATH, self.items.downloads_title).is_displayed()
@@ -45,6 +45,5 @@ class Elements:
         browser.find_element(By.XPATH, self.items.downloads_title).click()
 
     def check_downloads_result(self, browser):
-        time.sleep(1)
         return (browser.find_element(By.ID, self.items.result).is_displayed() and
                 browser.find_elements(By.CSS_SELECTOR, self.items.downloads_result)[2].is_displayed())

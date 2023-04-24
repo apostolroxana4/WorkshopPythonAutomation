@@ -7,6 +7,7 @@ class Items:
     home_arrow = "svg[class='rct-icon rct-icon-expand-close']"
     documents_title = "//*[contains(text(),'Documents')]"
     documents = "span[class='rct-title']"
+    documents_results = "span[class='text-success']"
     result = 'result'
 
     downloads_title = "//*[contains(text(),'Downloads')]"
