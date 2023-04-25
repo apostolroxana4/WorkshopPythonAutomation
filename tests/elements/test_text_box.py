@@ -3,7 +3,7 @@ from pages.elements.methods import Elements
 
 
 @pytest.mark.usefixtures("browser")
-@pytest.skip(allow_module_level = True)
+@pytest.skip(allow_module_level=True)
 class TestTextBox:
     def test_click_main_page_elements(self):
         Elements().click_main_page_elements(self.driver)
@@ -33,4 +33,3 @@ class TestTextBox:
     def test_click_documents(self):
         Elements().click_documents(self.driver)
         assert Elements().check_documents_result(self.driver)
-
