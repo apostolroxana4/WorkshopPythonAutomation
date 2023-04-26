@@ -3,11 +3,14 @@ from selenium.webdriver.common.by import By
 
 
 class Actions(Elements):
+    def elements_from_main_page(self, browser):
+        browser.find_element(By.CSS_SELECTOR, self.elements_from_main).click()
+
     def check_elements_section(self, browser):
-        return browser.find_element(By.XPATH, self.section_elements).is_displayed()
+        return browser.find_element(By.XPATH, self.elements_item).is_displayed()
 
     def click_elements_section(self, browser):
-        browser.find_element(By.XPATH, self.section_elements).click()
+        browser.find_element(By.XPATH, self.elements_item).click()
 
     def check_checkbox_subsection(self, browser):
         return browser.find_element(By.XPATH, self.subsection_checkbox).is_displayed()
@@ -19,7 +22,7 @@ class Actions(Elements):
         return browser.find_element(By.XPATH, self.home_item).is_displayed()
 
     def expand_home_item(self, browser):
-        browser.find_element(By.CLASS_NAME, self.expand_home).click()
+        browser.find_element(By.CSS_SELECTOR, self.expand_home).click()
 
     def check_downloads_item(self, browser):
         return browser.find_element(By.XPATH, self.downloads_item).is_displayed()
@@ -27,9 +30,9 @@ class Actions(Elements):
     def click_downloads_item(self, browser):
         browser.find_element(By.XPATH, self.downloads_item).click()
 
-    def check_downloads_excel_file(self, browser):
-        return (browser.find_element(By.ID, self.downloads_excel).is_displayed() and browser.find_element(
-            By.CSS_SELECTOR, self.downloads_result).text == 'excelFile')
+    def check_downloads_word_file(self, browser):
+        return (browser.find_element(By.ID, self.downloads_word).is_displayed() and browser.find_element(
+            By.CSS_SELECTOR, self.downloads_result).text == 'wordFile')
 
     def check_documents_item(self, browser):
         return browser.find_element(By.XPATH, self.documents_item).is_displayed()

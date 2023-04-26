@@ -2,13 +2,14 @@ from selenium.webdriver.common.by import By
 
 
 class Elements:
-    section_elements = "//*[contains(text(),'Elements')]"
+    elements_from_main = "div[class='card mt-4 top-card']"
+    elements_item = "//*[contains(text(),'Elements')]"
     subsection_checkbox = "//*[@id='item-1']"
     home_item = "//*[contains(text(),'Home')]"
     expand_home = "svg[class='rct-icon rct-icon-expand-close']"
     downloads_item = "//*[contains(text(),'Downloads')"
     downloads_result = "span[class='text-success']"
-    downloads_excel = "result"
+    downloads_word = "result"
     expand_documents = "svg[class='rct-icon rct-icon-expand-close']"
     documents_item = "//*[contains(text(),'Documents')"
     office_item = "//*[contains(text(),'Office')]"

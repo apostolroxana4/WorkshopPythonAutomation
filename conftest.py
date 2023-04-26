@@ -4,9 +4,10 @@ from driver.driver import Driver
 
 
 @pytest.fixture(scope="class")
-def browser():
+def browser(request):
     driver = Chrome()
     driver.implicitly_wait(10)
-    #driver.get(Driver.URL_textbox)
+    driver.get(Driver.URL_demo)
+    request.cls.driver = driver
     yield driver
     driver.quit()
