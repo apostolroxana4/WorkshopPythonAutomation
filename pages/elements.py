@@ -13,7 +13,7 @@ class Elements:
     expand_documents = "svg[class='rct-icon rct-icon-expand-close']"
     documents_item = "//*[contains(text(),'Documents')"
     office_item = "//*[contains(text(),'Office')]"
-    workspace_item = "//*[contains(text(),'Office')]"
+    workspace_item = "//*[contains(text(),'Workspace')]"
     documents_office_result = "result"
     documents_workspace_result = "result"
     documents_office_public_result = "span[class='text-success']"

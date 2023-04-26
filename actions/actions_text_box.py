@@ -34,6 +34,9 @@ class Actions(Elements):
         return (browser.find_element(By.ID, self.downloads_word).is_displayed() and browser.find_element(
             By.CSS_SELECTOR, self.downloads_result).text == 'wordFile')
 
+    def expand_documents_item(self, browser):
+        browser.find_element(By.CSS_SELECTOR, self.expand_documents).click()
+
     def check_documents_item(self, browser):
         return browser.find_element(By.XPATH, self.documents_item).is_displayed()
 
