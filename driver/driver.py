@@ -9,6 +9,6 @@ class Driver:
     def open_browser():
         driver = Chrome()
         driver.implicitly_wait(10)
-        driver.get(Driver.URL_textbox)
+        driver.get(Driver.URL_demo)
         driver.maximize_window()
         return driver

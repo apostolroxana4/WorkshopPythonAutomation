@@ -21,6 +21,42 @@ class Actions(Elements):
     def expand_home_item(self, browser):
         browser.find_element(By.CLASS_NAME, self.expand_home).click()
 
+    def check_downloads_item(self, browser):
+        return browser.find_element(By.XPATH, self.downloads_item).is_displayed()
+
+    def click_downloads_item(self, browser):
+        browser.find_element(By.XPATH, self.downloads_item).click()
+
+    def check_downloads_excel_file(self, browser):
+        return (browser.find_element(By.ID, self.downloads_excel).is_displayed() and browser.find_element(
+            By.CSS_SELECTOR, self.downloads_result).text == 'excelFile')
+
+    def check_documents_item(self, browser):
+        return browser.find_element(By.XPATH, self.documents_item).is_displayed()
+
+    def click_documents_item(self, browser):
+        browser.find_element(By.XPATH, self.documents_item).click()
+
+    def check_office(self, browser):
+        return browser.find_element(By.XPATH, self.office_item).is_displayed()
+
+    def click_office(self, browser):
+        browser.find_element(By.XPATH, self.office_item).click()
+
+    def check_workspace(self, browser):
+        return browser.find_element(By.XPATH, self.workspace_item).is_displayed()
+
+    def click_workspace(self, browser):
+        browser.find_element(By.XPATH, self.workspace_item).click()
+
+    def check_documents_office_public(self, browser):
+        return (browser.find_element(By.ID, self.documents_office_result).is_displayed() and browser.find_element(
+            By.CSS_SELECTOR, self.documents_office_public_result).text == "public")
+
+    def check_documents_workspace_angular(self, browser):
+        return (browser.find_element(By.ID, self.documents_workspace_result).is_displayed() and browser.find_element(
+            By.CSS_SELECTOR, self.documents_workspace_angular_result).text == "angular")
+
     def username_field_visibility(self, browser):
         return browser.find_element(By.XPATH, self.username_field).is_displayed()
 
