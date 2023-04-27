@@ -1,7 +1,7 @@
 import pytest
 from pages.elements.methods import Elements
 
-
+# @pytest.skip(allow_module_level=True)
 @pytest.mark.usefixtures("browser")
 class TestCheckboxSelectDownloads:
 
@@ -12,21 +12,27 @@ class TestCheckboxSelectDownloads:
     def test_select_checkbox(self):
         Elements().click_checkbox(self.driver)
         assert self.driver.current_url == "https://demoqa.com/checkbox"
-        assert Elements().check_home_title(self.driver)
+        assert Elements().check_home_title_visibility(self.driver)
 
     def test_expand_home(self):
-        Elements().click_expand_home(self.driver)
+        Elements().click_expand(self.driver, 0)
         assert Elements().check_downloads_title(self.driver)
 
     def test_expand_documents(self):
-        Elements().click_expand_documents(self.driver)
+        Elements().click_expand(self.driver, 1)
         assert Elements().check_office_title(self.driver)
 
     def test_click_office(self):
         Elements().click_office(self.driver)
-        assert Elements().check_office_results(self.driver)
+        Elements().click_expand(self.driver, 2)
+        Elements().get_name(self.driver)
+        assert Elements().check_result_length(self.driver)
+        assert Elements().verify_names_in_result(self.driver)
 
     def test_click_workspace(self):
         Elements().click_office(self.driver)
         Elements().click_workspace(self.driver)
-        assert Elements().check_workspace_results(self.driver)
+        Elements().click_expand(self.driver, 1)
+        Elements().get_name(self.driver)
+        assert Elements().check_result_length(self.driver)
+        assert Elements().verify_names_in_result(self.driver)

@@ -27,43 +27,41 @@ class Elements:
     def click_workspace(self, browser):
         browser.find_element(By.XPATH, self.items.workspace).click()
 
-    def click_expand_home(self, browser):
-        browser.find_element(By.CSS_SELECTOR, self.items.home_arrow).click()
-
-    def click_expand_documents(self, browser):
-        browser.find_elements(By.CSS_SELECTOR, self.items.documents_arrow)[1].click()
-
-    def check_elements(self, browser):
+    def check_elements_visibility(self, browser):
         return browser.find_elements(By.XPATH, self.items.section_elements)[1].is_displayed()
 
-    def check_checkbox(self, browser):
+    def check_checkbox_visibility(self, browser):
         time.sleep(1)
         return browser.find_element(By.XPATH, self.items.subsection_check_box).is_displayed()
 
-    def check_home_title(self, browser):
+    def check_home_title_visibility(self, browser):
         return browser.find_element(By.XPATH, self.items.home_title).is_displayed()
 
     def check_documents_title(self, browser):
         return browser.find_element(By.XPATH, self.items.documents_title).is_displayed()
 
-    def check_documents_result(self, browser):
-        return (browser.find_element(By.ID, self.items.result).is_displayed() and
-                browser.find_elements(By.CSS_SELECTOR, self.items.documents_results)[-1].text == 'general')
-
     def check_downloads_title(self, browser):
         return browser.find_element(By.XPATH, self.items.downloads_title).is_displayed()
-
-    def check_downloads_result(self, browser):
-        return (browser.find_element(By.ID, self.items.result).is_displayed() and
-                browser.find_elements(By.CSS_SELECTOR, self.items.downloads_result)[2].text == 'excelFile')
 
     def check_office_title(self, browser):
         return browser.find_element(By.XPATH, self.items.office).is_displayed()
 
-    def check_office_results(self, browser):
-        return (browser.find_element(By.ID, self.items.result).is_displayed() and
-                browser.find_elements(By.CSS_SELECTOR, self.items.office_result)[-1].text == 'general')
+    def click_expand(self, browser, number):
+        browser.find_elements(By.CSS_SELECTOR, self.items.arrow)[number].click()
 
-    def check_workspace_results(self, browser):
-        return (browser.find_element(By.ID, self.items.result).is_displayed() and
-                browser.find_elements(By.CSS_SELECTOR, self.items.workspace_result)[-1].text == 'veu')
+    def check_result_length(self, browser):
+        return (len(browser.find_elements(By.CSS_SELECTOR, self.items.result)) ==
+                len(browser.find_elements(By.CSS_SELECTOR, self.items.clicked_checkboxes)))
+
+    def get_name(self, browser):
+        elements = (browser.find_elements(By.XPATH,
+                                          "//*[name() = 'svg' and contains(@class, 'rct-icon-check')]/ancestor::label"))
+        for name in elements:
+            self.items.clicked_elements.append(name.get_attribute('for')[10:])
+        return self.items.clicked_elements
+
+    def verify_names_in_result(self, browser):
+        for result in browser.find_elements(By.CSS_SELECTOR, self.items.result):
+            if result.text not in set(self.get_name(browser)):
+                return False
+        return True
