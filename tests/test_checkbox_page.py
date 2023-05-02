@@ -25,6 +25,7 @@ class TestCheckbox:
 
         assert CheckBoxPageMethods.get_message(self, browser) \
                == "office public private classified general"
+
         CheckBoxPageMethods.click_checkbox(self, browser, "WorkSpace")
         assert CheckBoxPageMethods.get_message(self, browser) \
                == "documents workspace react angular veu office public private classified general"

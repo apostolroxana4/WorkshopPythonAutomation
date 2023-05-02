@@ -13,7 +13,7 @@ class TestCheckbox:
         FormsPageMethods.enter_first_name(self, browser, "John")
         FormsPageMethods.enter_last_name(self, browser, "Wick")
         FormsPageMethods.enter_email(self, browser, "john.wick@movies.io")
-        #FormsPageMethods.select_gender(self, browser, "male")
+        FormsPageMethods.select_gender(self, browser, "male")
         FormsPageMethods.enter_mobile(self, browser, "0748901611")
         FormsPageMethods.select_date_of_birth(self, browser, "25 Apr 1990")
 

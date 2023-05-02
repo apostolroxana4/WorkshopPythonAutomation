@@ -4,10 +4,14 @@ from pages.elements.checkbox_page import CheckBoxPage
 
 class CheckBoxPageMethods:
     def click_arrow(self, browser, name):
-        browser.find_element(By.XPATH, "//span[text()='" + name + "']/ancestor::*[@class='rct-text']/descendant::button").click()
+        browser.find_element(By.XPATH, CheckBoxPage.tree_element_part1 +
+                             name
+                             + CheckBoxPage.tree_element_part2_arrow).click()
 
     def click_checkbox(self, browser, name):
-        browser.find_element(By.XPATH, "//span[text()='" + name + "']/preceding-sibling::span[@class='rct-checkbox']").click()
+        browser.find_element(By.XPATH, CheckBoxPage.tree_element_part1 +
+                             name
+                             + CheckBoxPage.tree_element_part2_checkbox).click()
 
     def get_message(self, browser):
         elements = browser.find_elements(By.XPATH, CheckBoxPage.message_element)
