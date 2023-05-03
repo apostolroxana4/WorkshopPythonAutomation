@@ -3,12 +3,12 @@ from selenium.webdriver import Chrome
 
 
 @pytest.fixture(scope='function')
-def browser(request):
+def browser():
     driver = Chrome()
     driver.implicitly_wait(10)
     driver.get('https://demoqa.com/')
     driver.maximize_window()
-    request.cls.driver = driver
+    #request.cls.driver = driver
 
     yield driver
-    driver.quit()
+    #driver.quit()
