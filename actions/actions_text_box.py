@@ -31,8 +31,7 @@ class Actions(Elements):
         browser.find_element(By.XPATH, self.downloads_item).click()
 
     def check_downloads_word_file(self, browser):
-        return (browser.find_element(By.ID, self.downloads_word).is_displayed() and browser.find_element(
-            By.CSS_SELECTOR, self.downloads_result).text == 'wordFile')
+        return "wordFile" in browser.find_element(By.ID, self.downloads_word).text
 
     def expand_documents_item(self, browser):
         browser.find_element(By.CSS_SELECTOR, self.expand_documents).click()
@@ -56,19 +55,16 @@ class Actions(Elements):
         browser.find_element(By.XPATH, self.workspace_item).click()
 
     def check_documents_office_public(self, browser):
-        return (browser.find_element(By.ID, self.documents_office_result).is_displayed() and browser.find_element(
-            By.CSS_SELECTOR, self.documents_office_public_result).text == "public")
+        return "public" in browser.find_element(By.ID, self.documents_office_result).text
 
     def check_documents_workspace_angular(self, browser):
-        return (browser.find_element(By.ID, self.documents_workspace_result).is_displayed() and browser.find_element(
-            By.CSS_SELECTOR, self.documents_workspace_angular_result).text == "angular")
+        return "angular" in browser.find_element(By.ID, self.documents_workspace_result).text
 
     def username_field_visibility(self, browser):
         return browser.find_element(By.XPATH, self.username_field).is_displayed()
 
     def insert_value_for_username_field(self, browser, username):
         browser.find_element(By.ID, self.username).send_keys(username)
-        #assert browser.find_element(By.ID, self.username).text == username
 
     def email_field_visibility(self, browser):
         return browser.find_element(By.XPATH, self.email_field).is_displayed()

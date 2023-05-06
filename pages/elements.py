@@ -7,7 +7,7 @@ class Elements:
     subsection_checkbox = "//*[@id='item-1']"
     home_item = "//*[contains(text(),'Home')]"
     expand_home = "svg[class='rct-icon rct-icon-expand-close']"
-    downloads_item = "//*[contains(text(),'Downloads')"
+    downloads_item = "//*[contains(text(),'Downloads')]"
     downloads_result = "span[class='text-success']"
     downloads_word = "result"
     expand_documents = "svg[class='rct-icon rct-icon-expand-close']"

@@ -9,5 +9,6 @@ def browser(request):
     driver.implicitly_wait(10)
     driver.get(Driver.URL_demo)
     request.cls.driver = driver
-    yield driver
+    driver.maximize_window()
+    #yield driver
     driver.quit()
