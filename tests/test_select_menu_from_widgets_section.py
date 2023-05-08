@@ -35,5 +35,9 @@ class TestSelectMenuFromWidgetsSection:
     def test_click_old_style_select_menu(self):
         self.actions.select_old_style_select_menu(self.driver)
 
+    def test_verify_old_style_value(self):
+        value = self.actions.get_old_style_select_menu_value(self.driver)
+        print(value)
+
     def test_click_multiselect_dropdown(self):
         self.actions.select_multiselect_dropdown(self.driver)

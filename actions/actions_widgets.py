@@ -1,3 +1,5 @@
+from selenium.webdriver.support.select import Select
+
 from pages.items import ItemsWidgetsSection
 from selenium.webdriver.common.by import By
 
@@ -43,6 +45,7 @@ class Actions(ItemsWidgetsSection):
     def get_old_style_select_menu_value(self, browser):
         value_old_style = browser.find_element(By.XPATH, self.select_old_style_select_menu)
         value = Select(value_old_style)
+        value.select_by_value("9")
 
     def select_multiselect_dropdown(self, browser):
         browser.find_element(By.XPATH, self.multiselect_dropdown_item)[2].click()
