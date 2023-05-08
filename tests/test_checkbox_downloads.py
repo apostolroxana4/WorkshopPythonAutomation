@@ -1,6 +1,5 @@
 import pytest
-from actions.actions_text_box import Actions
-from pytest_bdd import scenario, given, when, then, step
+from actions.actions_elements import Actions
 
 
 @pytest.mark.usefixtures("browser")

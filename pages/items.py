@@ -1,9 +1,9 @@
 from selenium.webdriver.common.by import By
 
 
-class Elements:
-    elements_from_main = "div[class='card mt-4 top-card']"
-    elements_item = "//*[contains(text(),'Elements')]"
+class ItemsElementsSection:
+    main_page_elements = "div[class='card mt-4 top-card']"
+    section_elements = "//*[contains(text(),'Elements')]"
     subsection_checkbox = "//*[@id='item-1']"
     home_item = "//*[contains(text(),'Home')]"
     expand_home = "svg[class='rct-icon rct-icon-expand-close']"
@@ -29,7 +29,20 @@ class Elements:
     submit_button = "submit"
 
 
-class StepsElements(Elements):
+class ItemsWidgetsSection:
+    widgets_from_main = "div[class='card mt-4 top-card']"
+    widgets_section= "//*[contains(text(),'Widgets')]"
+    subsection_select_menu = "//*[@id='item-8']"
+    select_value_item = "div[class=' css-2b097c-container']"
+    another_root_option_item = "//*[@id='react-select-2-option-3']"
+    select_one_item = "//*[@id='selectOne']"
+    prof_option_item = "//*[@id='react-select-3-option-0-4']"
+    old_style_select_menu_item = "//*[@id='oldSelectMenu']"
+    magenta_option_item ="" #voi pune la metoda: se.selectByValue("9")
+    multiselect_dropdown_item = "div[class=' css-2b097c-container']"
+
+
+class StepsElements(ItemsElementsSection):
 
     def fill_credentials(self, browser, username, email, permanent_address):
         if (

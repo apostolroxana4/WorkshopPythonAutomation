@@ -1,7 +1,7 @@
 import pytest
 from driver.driver import Driver
-from actions.actions_text_box import Actions
-from pages.elements import StepsElements
+from actions.actions_elements import Actions
+from pages.items import StepsElements
 
 
 #@pytest.mark.skipif(sys.platform != "win32", reason="just win32 platform available")

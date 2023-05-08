@@ -1,5 +1,5 @@
 import pytest
-from actions.actions_text_box import Actions
+from actions.actions_elements import Actions
 from pytest_bdd import scenario, when, then
 
 

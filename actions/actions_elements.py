@@ -1,16 +1,16 @@
-from pages.elements import Elements
+from pages.items import ItemsElementsSection
 from selenium.webdriver.common.by import By
 
 
-class Actions(Elements):
+class Actions(ItemsElementsSection):
     def elements_from_main_page(self, browser):
-        browser.find_element(By.CSS_SELECTOR, self.elements_from_main).click()
+        browser.find_element(By.CSS_SELECTOR, self.main_page_elements).click()
 
     def check_elements_section(self, browser):
-        return browser.find_element(By.XPATH, self.elements_item).is_displayed()
+        return browser.find_element(By.XPATH, self.section_elements).is_displayed()
 
     def click_elements_section(self, browser):
-        browser.find_element(By.XPATH, self.elements_item).click()
+        browser.find_element(By.XPATH, self.section_elements).click()
 
     def check_checkbox_subsection(self, browser):
         return browser.find_element(By.XPATH, self.subsection_checkbox).is_displayed()
