@@ -43,11 +43,15 @@ class Actions(ItemsWidgetsSection):
         browser.find_element(By.XPATH, self.old_style_select_menu_item).click()
 
     def get_old_style_select_menu_value(self, browser):
-        value_old_style = browser.find_element(By.XPATH, self.select_old_style_select_menu)
+        value_old_style = browser.find_element(By.XPATH, self.old_style_select_menu_item)
         value = Select(value_old_style)
         value.select_by_value("9")
 
     def select_multiselect_dropdown(self, browser):
         browser.find_element(By.XPATH, self.multiselect_dropdown_item)[2].click()
 
-
+    def get_multiselect_dropdown_value(self, browser):
+        value_multiselect_dropdown = browser.find_element(By.XPATH, self.multiselect_dropdown_item)
+        multi_value = Select(value_multiselect_dropdown)
+        multi_value.select_by_visible_text("Green")
+        multi_value.select_by_visible_text("Red")

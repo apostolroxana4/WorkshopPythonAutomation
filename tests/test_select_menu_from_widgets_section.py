@@ -38,6 +38,12 @@ class TestSelectMenuFromWidgetsSection:
     def test_verify_old_style_value(self):
         value = self.actions.get_old_style_select_menu_value(self.driver)
         print(value)
+        assert "Magenta" == value
 
     def test_click_multiselect_dropdown(self):
         self.actions.select_multiselect_dropdown(self.driver)
+
+    def test_select_all_options_from_multiselect_dropdown(self):
+        multi_value = self.actions.get_multiselect_dropdown_value(self.driver)
+        print(multi_value)
+        assert "Green" and "Red" == multi_value

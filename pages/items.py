@@ -38,7 +38,6 @@ class ItemsWidgetsSection:
     select_one_item = "//*[@id='selectOne']"
     prof_option_item = "//*[@id='react-select-3-option-0-4']"
     old_style_select_menu_item = "//*[@id='oldSelectMenu']"
-    magenta_option_item ="" #voi pune la metoda: se.selectByValue("9")
     multiselect_dropdown_item = "div[class=' css-2b097c-container']"
 
 
