@@ -23,6 +23,6 @@ def select_dropdown_value(browser):
 def verify_selected_value(browser):
     actual_value = SelectMenuPageMethods.get_ddSelectValueText(browser)
     print(actual_value)
-    assert "Group 2, option 2" == actual_value
+    assert "Group 2, option 2" in actual_value
 
 

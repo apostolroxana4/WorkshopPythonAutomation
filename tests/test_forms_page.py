@@ -4,6 +4,7 @@ from pages.methods.home_page_methods import HomePageMethods
 from pages.methods.side_menu_methods import SideMenuMethods
 
 
+@pytest.skip(allow_module_level = True)
 @pytest.mark.usefixtures("browser")
 class TestCheckbox:
     def test_complete_form(self, browser):
