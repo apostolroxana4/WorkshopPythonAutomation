@@ -1,4 +1,4 @@
-from pytest_bdd import scenario, when, then
+
 
 Feature: DemoQa Checkbox subsection
   This feature verifies three categories: Desktop, Documents and Downloads
@@ -18,7 +18,7 @@ Feature: DemoQa Checkbox subsection
 
   Scenario: Check angular file and public file from Documents category
     When I click to Elements section
-    Then I should enter into Elements section
+    And I should enter into Elements section
     When I click Checkbox subsection
     Then I should enter into Checkbox subsection
     When I expand Home button

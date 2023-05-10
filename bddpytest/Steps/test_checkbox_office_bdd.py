@@ -4,16 +4,15 @@ from pytest_bdd import scenario, when, then
 
 
 @pytest.mark.usefixtures("browser")
-class TestCheckboxOffice:
-    actions = Actions()
+
 
     @scenario('myfeatures/checkbox.feature', 'Check angular file and public file from Documents category')
     def test_checkbox(self):
         pass
 
     @when("I click to Elements section")
-    def click_on_elements(self):
-        self.actions.elements_from_main_page(self.driver)
+    def click_on_elements():
+        selactions.elements_from_main_page(self.driver)
 
     @then("I should enter into Elements section")
     def main_page_visibility(self):

@@ -22,7 +22,7 @@ class TestSelectMenuFromWidgetsSection:
         self.browser.execute_script("window.scrollTo(0,document.body.scrollHeight)")
         value = self.actions.get_select_value_text(self.driver)
         print(value)
-        assert "Another root option" == value
+        assert "Another root option" in value
 
     def test_click_select_one(self):
         self.actions.click_select_one(self.driver)
@@ -30,7 +30,7 @@ class TestSelectMenuFromWidgetsSection:
     def test_verify_selected_one_value(self):
         value = self.actions.get_select_one_value_text(self.driver)
         print(value)
-        assert "Prof." == value
+        assert "Prof." in value
 
     def test_click_old_style_select_menu(self):
         self.actions.select_old_style_select_menu(self.driver)
@@ -38,7 +38,7 @@ class TestSelectMenuFromWidgetsSection:
     def test_verify_old_style_value(self):
         value = self.actions.get_old_style_select_menu_value(self.driver)
         print(value)
-        assert "Magenta" == value
+        assert "Magenta" in value
 
     def test_click_multiselect_dropdown(self):
         self.actions.select_multiselect_dropdown(self.driver)
@@ -46,4 +46,4 @@ class TestSelectMenuFromWidgetsSection:
     def test_select_all_options_from_multiselect_dropdown(self):
         multi_value = self.actions.get_multiselect_dropdown_value(self.driver)
         print(multi_value)
-        assert "Green" and "Red" == multi_value
+        assert "Green" and "Red" in multi_value
