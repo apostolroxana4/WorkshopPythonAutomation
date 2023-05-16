@@ -8,6 +8,7 @@ class TestCheckboxDownloads:
 
     def test_click_on_elements(self):
         self.actions.elements_from_main_page(self.driver)
+        assert self.driver.current_url == "https://demoqa.com/elements"
 
     def test_click_on_checkbox_subsection(self):
         self.actions.click_checkbox_subsection(self.driver)
@@ -20,6 +21,3 @@ class TestCheckboxDownloads:
     def test_click_on_downloads_item(self):
         self.actions.click_downloads_item(self.driver)
         assert self.actions.check_downloads_word_file(self.driver)
-
-
-
