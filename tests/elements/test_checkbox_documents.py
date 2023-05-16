@@ -1,38 +1,54 @@
 import pytest
 from pages.elements.methods import Elements
+from pytest_bdd import scenario, given, when, then
+
 
 # @pytest.skip(allow_module_level=True)
-@pytest.mark.usefixtures("browser")
-class TestCheckboxSelectDownloads:
+@scenario("../../features/click_checkbox.feature", "Select documents")
+@given("I am on elements")
+def test_click_main_page_elements(browser):
+    Elements().click_main_page_elements(browser)
+    assert browser.current_url == "https://demoqa.com/elements"
 
-    def test_click_main_page_elements(self):
-        Elements().click_main_page_elements(self.driver)
-        assert self.driver.current_url == "https://demoqa.com/elements"
 
-    def test_select_checkbox(self):
-        Elements().click_checkbox(self.driver)
-        assert self.driver.current_url == "https://demoqa.com/checkbox"
-        assert Elements().check_home_title_visibility(self.driver)
+@given("I selected the checkbox")
+def test_select_checkbox(browser):
+    Elements().click_checkbox(browser)
+    assert browser.current_url == "https://demoqa.com/checkbox"
+    assert Elements().check_home_title_visibility(browser)
 
-    def test_expand_home(self):
-        Elements().click_expand(self.driver, 0)
-        assert Elements().check_downloads_title(self.driver)
 
-    def test_expand_documents(self):
-        Elements().click_expand(self.driver, 1)
-        assert Elements().check_office_title(self.driver)
+@given("I expand home")
+def test_expand_home(browser):
+    Elements().click_expand(browser, 0)
+    assert Elements().check_downloads_title(browser)
 
-    def test_click_office(self):
-        Elements().click_office(self.driver)
-        Elements().click_expand(self.driver, 2)
-        Elements().get_name(self.driver)
-        assert Elements().check_result_length(self.driver)
-        assert Elements().verify_names_in_result(self.driver)
 
-    def test_click_workspace(self):
-        Elements().click_office(self.driver)
-        Elements().click_workspace(self.driver)
-        Elements().click_expand(self.driver, 1)
-        Elements().get_name(self.driver)
-        assert Elements().check_result_length(self.driver)
-        assert Elements().verify_names_in_result(self.driver)
+@given("I expand documents")
+def test_expand_documents(browser):
+    Elements().click_expand(browser, 1)
+    assert Elements().check_office_title(browser)
+
+
+@when("I click on office")
+def test_expand_and_click_office(browser):
+    Elements().click_office(browser)
+    Elements().click_expand(browser, 2)
+    assert Elements().check_result_length(browser)
+
+
+@then("The correct office names are shown and number of items are displayed")
+def test_check_result_office(browser):
+    assert Elements().verify_names_in_result(browser)
+
+
+@when("I click on workspace")
+def test_expand_and_click_workspace(browser):
+    Elements().click_workspace(browser)
+    Elements().click_expand(browser, 1)
+    assert Elements().check_result_length(browser)
+
+
+@then("The correct workspace names are shown and number of items are displayed")
+def test_check_result_workspace(browser):
+    assert Elements().verify_names_in_result(browser)
