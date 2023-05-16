@@ -15,7 +15,7 @@ Feature: DemoQa Checkbox subsection
     Then I should enter into Checkbox subsection
     When I expand Home button
     When I expand Documents category
-    When I click Office
+    When I click Workspace
     Then I get expected message for Angular File
 
 
@@ -25,6 +25,6 @@ Feature: DemoQa Checkbox subsection
     Then I should enter into Checkbox subsection
     When I expand Home button
     And I expand Documents category
-    And I click Workspace
+    And I click Office
     Then I get expected message for Public File
 
