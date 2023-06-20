@@ -7,4 +7,17 @@ class Elements:
 
     gender_male = "gender-radio-1"
 
-    mobile = "userNumber"
+    mobile_number = "userNumber"
+
+    date_of_birth = "dateOfBirthInput"
+
+    hobbies_sports = "hobbies-checkbox-1"
+    hobbies_music = "hobbies-checkbox-3"
+
+    state = 'state'
+    haryana = 'react-select-3-option-2'
+    city = 'city'
+    karnal = 'react-select-4-option-0'
+
+    form = "userForm"
+    close_modal = 'closeLargeModal'
