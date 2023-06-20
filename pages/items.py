@@ -31,7 +31,7 @@ class ItemsElementsSection:
 
 class ItemsWidgetsSection:
     widgets_from_main = "div[class='card mt-4 top-card']"
-    widgets_section= "//*[contains(text(),'Widgets')]"
+    widgets_section = "//*[contains(text(),'Widgets')]"
     subsection_select_menu = "//*[@id='item-8']"
     select_value_item = "div[class=' css-2b097c-container']"
     another_root_option_item = "//*[@id='react-select-2-option-3']"
@@ -40,6 +40,21 @@ class ItemsWidgetsSection:
     old_style_select_menu_item = "//*[@id='oldSelectMenu']"
     multiselect_dropdown_item = "div[class=' css-2b097c-container']"
 
+
+class ItemsFormsSection:
+    forms_from_main = "div[class='card mt-4 top-card']"
+    forms_section = "//*[contains(text(),'Forms')]"
+    subsection_practice_form = "//*[@id='item-0']"
+    first_name_item = "firstName"
+    last_name_item = "lastName"
+    email_item = "userEmail"
+    gender_male_radio_button = "//label[@for='gender-radio-1']"
+    gender_female_radio_button = "//label[@for='gender-radio-2']"
+    gender_other_radio_button = "//label[@for='gender-radio-3']"
+    male_item = "gender-radio-1"
+    female_item = "gender-radio-2"
+    other_item = "gender-radio-3"
+    radio_button_options = "div[class='col-md-9 col-sm-12']"
 
 class StepsElements(ItemsElementsSection):
 

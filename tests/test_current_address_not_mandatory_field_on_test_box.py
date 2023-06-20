@@ -24,7 +24,7 @@ class TestCurrentAddressNotMandatoryFieldOnTestBox:
 
     def test_insert_permanent_address(self):
         self.actions.insert_value_for_permanent_address(self.driver, "permanent_address")
-        assert self.steps_elements.fill_credentials(self.driver, "username", "email", "current_address","permanent_address")
+        assert self.steps_elements.fill_credentials(self.driver, "username", "email", "current_address", "permanent_address")
        
     def test_click_submit(self):
         self.actions.click_submit_button(self.driver)

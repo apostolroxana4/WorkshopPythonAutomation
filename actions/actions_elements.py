@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 
 class Actions(ItemsElementsSection):
     def elements_from_main_page(self, browser):
-        browser.find_element(By.CSS_SELECTOR, self.main_page_elements)[0].click()
+        browser.find_element(By.CSS_SELECTOR, self.main_page_elements).click()
 
     def check_elements_section(self, browser):
         return browser.find_element(By.XPATH, self.section_elements).is_displayed()
