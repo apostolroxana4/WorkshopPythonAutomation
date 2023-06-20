@@ -47,7 +47,9 @@ class Elements:
         return browser.find_element(By.XPATH, self.items.office).is_displayed()
 
     def click_expand(self, browser, number):
-        browser.find_elements(By.CSS_SELECTOR, self.items.arrow)[number].click()
+        arrow = browser.find_elements(By.CSS_SELECTOR, self.items.arrow)
+        if not arrow[number].is_selected():
+            arrow[number].click()
 
     def check_result_length(self, browser):
         return (len(browser.find_elements(By.CSS_SELECTOR, self.items.result)) ==

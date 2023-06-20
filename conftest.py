@@ -8,6 +8,7 @@ def browser():
     driver = Chrome()
     driver.implicitly_wait(10)
     driver.get(Driver.URL_demoqa)
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
     yield driver
     driver.quit()
