@@ -56,5 +56,5 @@ class Methods:
         return browser.current_url == url
 
     @staticmethod
-    def verify_successful_submission(browser):
-        pass
+    def refresh_page(browser):
+        browser.refresh()

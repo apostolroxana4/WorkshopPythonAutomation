@@ -23,3 +23,4 @@ class Elements:
     close_modal = 'closeLargeModal'
 
     modal_form_result = '.modal-content'
+
