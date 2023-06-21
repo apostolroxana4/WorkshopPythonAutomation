@@ -20,7 +20,8 @@ class Actions(ItemsFormsSection):
         browser.find_element(By.ID, self.first_name_item).send_keys("Jack")
 
     def enter_wrong_last_name(self, browser):
-        element_wrong_last_name = browser.find_element(By.ID, self.last_name_item).send_keys("Taylor")
+        element_wrong_last_name = browser.find_element(By.ID, self.last_name_item)
+        element_wrong_last_name.send_keys("Taylor")
         element_wrong_last_name.clear()
 
     def enter_correctly_last_name(self, browser):
