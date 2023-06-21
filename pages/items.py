@@ -42,9 +42,8 @@ class ItemsWidgetsSection:
 
 
 class ItemsFormsSection:
-    forms_from_main = "div[class='card mt-4 top-card']"
-    forms_section = "//*[contains(text(),'Forms')]"
-    subsection_practice_form = "//*[@id='item-0']"
+    forms_from_main = "//*[contains(text(),'Forms')]"
+    forms_subsection = "//*[contains(text(),'Practice')]"
     first_name_item = "firstName"
     last_name_item = "lastName"
     email_item = "userEmail"
@@ -54,7 +53,7 @@ class ItemsFormsSection:
     male_item = "gender-radio-1"
     female_item = "gender-radio-2"
     other_item = "gender-radio-3"
-    radio_button_options = "div[class='col-md-9 col-sm-12']"
+
 
 class StepsElements(ItemsElementsSection):
 

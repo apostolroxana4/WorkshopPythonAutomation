@@ -7,7 +7,7 @@ class TestSelectOneOptionRadioButton:
     actions = Actions()
 
     def test_click_on_forms_from_main_page(self, browser):
-        self.actions.forms_from_main_page(browser)
+        self.actions.click_forms_section(browser)
         assert browser.current_url == "https://demoqa.com/forms"
 
     def test_click_on_practice_form_subsection(self, browser):
