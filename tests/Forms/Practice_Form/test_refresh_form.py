@@ -1,6 +1,5 @@
 import pytest
 from selenium.webdriver.common.by import By
-
 from pages.Practice_Form.elements import Elements
 from pages.Practice_Form.methods import Methods
 
