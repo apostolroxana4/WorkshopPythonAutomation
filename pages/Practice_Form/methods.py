@@ -1,5 +1,5 @@
-from pages.Practice_Form.elements import Elements
 from selenium.webdriver.common.keys import Keys
+
 
 class Methods:
 
@@ -26,6 +26,7 @@ class Methods:
     @staticmethod
     def is_element_displayed(browser, by, path):
         return browser.find_element(by, path).is_displayed()
+
     @staticmethod
     def clear_field(browser, by, path):
         browser.find_element(by, path).clear()
