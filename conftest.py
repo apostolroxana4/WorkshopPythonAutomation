@@ -3,7 +3,7 @@ from selenium.webdriver import Chrome
 from driver.driver import Driver
 
 
-@pytest.fixture(scope="module")
+@pytest.fixture(scope="class")
 def browser():
     driver = Chrome()
     driver.implicitly_wait(10)
