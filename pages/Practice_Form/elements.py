@@ -15,9 +15,11 @@ class Elements:
     hobbies_music = "hobbies-checkbox-3"
 
     state = 'state'
-    haryana = 'react-select-3-option-2'
+    haryana = "//*[contains(text(),'Haryana')]"
     city = 'city'
     karnal = 'react-select-4-option-0'
 
     form = "userForm"
     close_modal = 'closeLargeModal'
+
+    modal_form_result = '.modal-content'
