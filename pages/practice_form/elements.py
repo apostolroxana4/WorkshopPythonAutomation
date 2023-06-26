@@ -1,5 +1,5 @@
 class Elements:
-    forms_category = "//*[contains(text(),'Forms')]"
+    forms_category = "//*[contains(text(),'forms')]"
     form_subcategory = "//*[contains(text(),'Practice')]"
 
     first_name = "firstName"
@@ -23,4 +23,3 @@ class Elements:
     close_modal = 'closeLargeModal'
 
     modal_form_result = '.modal-content'
-
