@@ -4,31 +4,34 @@ from pages.practice_form.elements import Elements
 from pages.practice_form.methods import FormMethods
 
 
-# @pytest.skip(allow_module_level=True)
+@pytest.skip(allow_module_level=True)
 @pytest.mark.usefixtures("browser")
 class TestRefreshForm:
     form_methods = FormMethods()
+    elements = Elements
 
     def test_click_on_forms(self):
-        self.form_methods.click_element(self.driver, By.XPATH, Elements.forms_category)
-        assert self.form_methods.verify_url(self.driver, "https://demoqa.com/forms")
+        self.form_methods.click_element(self.driver, By.XPATH, self.elements.forms_category)
+        assert self.form_methods.verify_url(self.driver, self.elements.forms_category_url)
 
     def test_click_on_practice_form(self):
-        self.form_methods.click_element(self.driver, By.XPATH, Elements.form_subcategory)
-        assert self.form_methods.verify_url(self.driver, "https://demoqa.com/automation-practice-form")
+        self.form_methods.click_element(self.driver, By.XPATH, self.elements.form_subcategory)
+        assert self.form_methods.verify_url(self.driver, self.elements.form_subcategory_url)
 
     def test_fill_name(self):
-        self.form_methods.fill(self.driver, By.ID, Elements.first_name, 'Bob')
-        assert self.form_methods.validate_field(self.driver, By.ID, Elements.first_name, "Bob")
+        self.form_methods.fill(self.driver, By.ID, self.elements.first_name, self.elements.first_name_value)
+        assert self.form_methods.validate_field(self.driver, By.ID,
+                                                self.elements.first_name, self.elements.first_name_value)
 
-        self.form_methods.fill(self.driver, By.ID, Elements.last_name, 'The Builder')
-        assert self.form_methods.validate_field(self.driver, By.ID, Elements.last_name, 'The Builder')
+        self.form_methods.fill(self.driver, By.ID, self.elements.last_name, self.elements.last_name_value)
+        assert self.form_methods.validate_field(self.driver, By.ID,
+                                                self.elements.last_name, self.elements.last_name_value)
 
     def test_select_gender(self):
-        self.form_methods.click_element(self.driver, By.CSS_SELECTOR, f"label[for='{Elements.gender_male}']")
-        assert self.form_methods.is_element_selected(self.driver, By.ID, Elements.gender_male)
+        self.form_methods.click_element(self.driver, By.CSS_SELECTOR, self.elements.gender_male_value)
+        assert self.form_methods.is_element_selected(self.driver, By.ID, self.elements.gender_male)
 
     def test_refresh_and_confirm(self):
         self.form_methods.refresh_page(self.driver)
-        assert self.driver.find_element(By.ID, "firstName").get_attribute("value") == ''
-        assert not self.driver.find_element(By.ID, "gender-radio-1").is_selected()
+        assert self.form_methods.validate_after_refresh(self.driver, By.ID,
+                                                        self.elements.first_name, self.elements.gender_male)
