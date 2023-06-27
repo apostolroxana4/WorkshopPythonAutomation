@@ -9,7 +9,7 @@ class TestSelectMenu:
 
     def test_click_first_dropdown(self):
         self.driver.find_elements(By.CSS_SELECTOR, "div[class='card mt-4 top-card']")[0].click()
-        self.driver.find_elements(By.XPATH, "//*[contains(text(),'Elements')]")[1].click()
+        self.driver.find_elements(By.XPATH, "//*[contains(text(),'pages')]")[1].click()
 
         self.driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")
         time.sleep(1)

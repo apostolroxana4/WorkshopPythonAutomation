@@ -1,5 +1,5 @@
 import pytest
-from pages.elements.methods import Elements
+from gherkin.pages.elements.methods import Elements
 
 element = Elements()
 @pytest.mark.usefixtures("browser")

@@ -1,6 +1,6 @@
 import time
 from selenium.webdriver.common.by import By
-from pages.elements.items import Items
+from gherkin.pages.elements.items import Items
 
 
 class Elements:

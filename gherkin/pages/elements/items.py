@@ -1,6 +1,6 @@
 class Items:
     main_page_elements = "div[class='card mt-4 top-card']"
-    section_elements = "//*[contains(text(),'Elements')]"
+    section_elements = "//*[contains(text(),'pages')]"
     subsection_check_box = "//*[contains(text(),'Check Box')]"
     home_title = "//*[contains(text(),'Home')]"
     documents_title = "//*[contains(text(),'Documents')]"

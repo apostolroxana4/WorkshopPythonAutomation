@@ -1,14 +1,12 @@
-import time
-
 import pytest
-from pages.elements.methods import Elements
-from pytest_bdd import scenarios,scenario, given, when, then
+from gherkin.pages.elements.methods import Elements
+from pytest_bdd import scenarios, given, when, then
 
-
-# @pytest.skip(allow_module_level=True)
-scenarios("../../features/click_checkbox.feature")
-# @scenario("../../features/click_checkbox.feature", "Select downloads")
 element = Elements()
+@pytest.skip(allow_module_level=True)
+# scenarios("../../features/click_checkbox.feature")
+# @scenario("../../features/click_checkbox.feature", "Select downloads")
+
 @given("I am on elements")
 def click_main_page_elements(browser):
     element.click_main_page_elements(browser)

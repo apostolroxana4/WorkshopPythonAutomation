@@ -1,10 +1,10 @@
 import pytest
-from pages.elements.methods import Elements
-from pytest_bdd import scenario,scenarios, given, when, then
+from gherkin.pages.elements.methods import Elements
+from pytest_bdd import scenarios, given, when, then
 
 element = Elements()
-# @pytest.skip(allow_module_level=True)
-scenarios("../../features/click_checkbox.feature")
+@pytest.skip(allow_module_level=True)
+# scenarios("../../features/click_checkbox.feature")
 # @scenario("../../features/click_checkbox.feature", "Select documents")
 # def test_ex():
 #     pass

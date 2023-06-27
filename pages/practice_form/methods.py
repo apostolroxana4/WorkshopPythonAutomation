@@ -37,7 +37,7 @@ class FormMethods(GeneralMethods):
     @staticmethod
     def validate_after_refresh(browser, by, path1, path2):
         return (browser.find_element(by, path1).get_attribute("value") == ''
-        and not browser.find_element(by, path2).is_selected())
+                and not browser.find_element(by, path2).is_selected())
 
     def insert_wrong_number(self, browser, by, path):
         self.click_element(browser, by, path)

@@ -4,10 +4,6 @@ from pages.practice_form.elements import Elements
 from pages.practice_form.methods import FormMethods
 
 
-# mutat link-urile in variabile + variabile gen label
-# de redus utilizarea la browser
-
-
 # @pytest.skip(allow_module_level=True)
 @pytest.mark.usefixtures("browser")
 class TestFillForm:
