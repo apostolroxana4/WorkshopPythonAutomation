@@ -53,7 +53,11 @@ class ItemsFormsSection:
     male_item = "gender-radio-1"
     female_item = "gender-radio-2"
     other_item = "gender-radio-3"
-
+    form_url = "https://demoqa.com/forms"
+    first_name_value = 'Jack'
+    last_name_value_wrong = 'Taylor'
+    last_name_value_correctly = 'Maylor'
+    email_value = "jackmaylor@gmail.com"
 
 class StepsElements(ItemsElementsSection):
 
