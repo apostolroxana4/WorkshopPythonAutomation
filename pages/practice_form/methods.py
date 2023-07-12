@@ -1,5 +1,7 @@
 from selenium.webdriver.common.keys import Keys
 from pages.general_methods import GeneralMethods
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions
 
 
 class FormMethods(GeneralMethods):
@@ -43,3 +45,7 @@ class FormMethods(GeneralMethods):
         self.click_element(browser, by, path)
         self.fill(browser, by, path, 'wrong number')
         self.clear_field(browser, by, path)
+
+    @staticmethod
+    def wait_for_refresh(browser, by, path):
+        WebDriverWait(browser, 10).until_not(expected_conditions.element_to_be_clickable((by, path)))

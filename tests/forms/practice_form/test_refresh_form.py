@@ -4,7 +4,7 @@ from pages.practice_form.elements import Elements
 from pages.practice_form.methods import FormMethods
 
 
-@pytest.skip(allow_module_level=True)
+# @pytest.skip(allow_module_level=True)
 @pytest.mark.usefixtures("browser")
 class TestRefreshForm:
     form_methods = FormMethods()
@@ -33,5 +33,6 @@ class TestRefreshForm:
 
     def test_refresh_and_confirm(self):
         self.form_methods.refresh_page(self.driver)
+        self.form_methods.wait_for_refresh(self.driver, By.ID, self.elements.gender_male)
         assert self.form_methods.validate_after_refresh(self.driver, By.ID,
                                                         self.elements.first_name, self.elements.gender_male)

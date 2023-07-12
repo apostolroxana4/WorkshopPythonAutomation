@@ -17,7 +17,7 @@ class Elements:
 
     date_of_birth = "dateOfBirthInput"
     date_of_birth_value = "3 Sep 2023"
-    date_of_birth_result = "23 Sep 2023"
+    date_of_birth_result = "13 Sep 2023"
 
     hobbies_sports = "hobbies-checkbox-1"
     hobbies_sports_value = f"label[for='{hobbies_sports}']"
