@@ -5,6 +5,8 @@ from selenium.webdriver.support import expected_conditions
 
 
 class FormMethods(GeneralMethods):
+    def __init__(self, browser):
+        super().__init__(browser)
 
     @staticmethod
     def fill(browser, by, path, word):

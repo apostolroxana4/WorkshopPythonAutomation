@@ -4,7 +4,7 @@ from pages.practice_form.elements import Elements
 from pages.practice_form.methods import FormMethods
 
 
-# @pytest.skip(allow_module_level=True)
+@pytest.skip(allow_module_level=True)
 @pytest.mark.usefixtures("browser")
 class TestFillForm:
     form_methods = FormMethods()

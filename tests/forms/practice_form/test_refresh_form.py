@@ -11,8 +11,8 @@ class TestRefreshForm:
     elements = Elements
 
     def test_click_on_forms(self):
-        self.form_methods.click_element(self.driver, By.XPATH, self.elements.forms_category)
-        assert self.form_methods.verify_url(self.driver, self.elements.forms_category_url)
+        self.form_methods.click_element(By.XPATH, self.elements.forms_category)
+        assert self.form_methods.verify_url(self.elements.forms_category_url)
 
     def test_click_on_practice_form(self):
         self.form_methods.click_element(self.driver, By.XPATH, self.elements.form_subcategory)
