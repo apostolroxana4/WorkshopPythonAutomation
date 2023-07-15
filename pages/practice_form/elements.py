@@ -16,8 +16,12 @@ class Elements:
     mobile_number_value = '0722333446'
 
     date_of_birth = "dateOfBirthInput"
-    date_of_birth_value = "3 Sep 2023"
-    date_of_birth_result = "13 Sep 2023"
+    date_day = ".react-datepicker__day--013"
+    date_month_year = ".react-datepicker__current-month"
+    month_dict = {'January': 'Jan ', 'February': 'Feb ', 'March': 'Mar ', 'April': 'Apr ', 'May': 'May ',
+                  'June': 'Jun ',
+                  'July': 'Jul '
+                  }
 
     hobbies_sports = "hobbies-checkbox-1"
     hobbies_sports_value = f"label[for='{hobbies_sports}']"
