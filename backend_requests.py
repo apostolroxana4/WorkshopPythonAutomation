@@ -9,8 +9,8 @@ class BackendRequests:
     authorize_account_url = "https://demoqa.com/Account/v1/Authorized"
     post_book_url = "https://demoqa.com/BookStore/v1/Books"
     userID = "b5d1f0f7-6bac-4f5c-9be6-4437f506f8e2"
-    get_user_details_url = "https://demoqa.com/Account/v1/User/"+userID
-    delete_books_url = "https://demoqa.com/BookStore/v1/Books?UserId="+userID
+    get_user_details_url = "https://demoqa.com/Account/v1/User/" + userID
+    delete_books_url = "https://demoqa.com/BookStore/v1/Books?UserId=" + userID
     name = "razvan"
     password = "123Abcdefg@"
     token = ""
@@ -19,18 +19,24 @@ class BackendRequests:
         "password": password
     }
 
-    book_list_id = []
-
-    def generate_books(self):
-        collectionOfIsbns = []
+    def generate_books_list(self):
+        book_list_id = []
         books_get = requests.get(self.get_books_url)
         for i in range(len(books_get.json()["books"])):
-            self.book_list_id.append(books_get.json()["books"][i]['isbn'])
+            book_list_id.append(books_get.json()["books"][i]['isbn'])
+        return book_list_id
 
+    def get_book_id(self):
+        collection_of_isbns = []
+        generated_books = self.generate_books_list()
 
-        random.shuffle(self.book_list_id)
-        collectionOfIsbns.append(self.book_list_id.pop())
-        return collectionOfIsbns
+        random.shuffle(generated_books)
+        value = generated_books.pop()
+
+        if value not in collection_of_isbns:
+            collection_of_isbns.append(value)
+
+        return collection_of_isbns
 
     def authorize_account(self):
         post_authorize_account = requests.post(self.authorize_account_url, self.authorize_body)
@@ -46,7 +52,7 @@ class BackendRequests:
             "userId": self.userID,
             "collectionOfIsbns": [
                 {
-                    "isbn": self.generate_books()
+                    "isbn": self.get_book_id()
                 }
             ]
         }
@@ -62,9 +68,11 @@ class BackendRequests:
         headers = {"Authorization": "Bearer " + self.token}
         requests.delete(self.delete_books_url, headers=headers)
 
+
 backend_requests = BackendRequests()
 backend_requests.authorize_account()
 backend_requests.generate_token()
+
 backend_requests.post_books()
 backend_requests.post_books()
 
