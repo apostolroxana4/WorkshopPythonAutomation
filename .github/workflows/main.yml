@@ -1,0 +1,11 @@
+jobs:
+  my_job:
+    name: test self hosted runner
+    runs-on: self-hosted
+on:
+  pull_request:
+    branches:
+    - main
+name: Get current directory
+ run: pwd
+  
