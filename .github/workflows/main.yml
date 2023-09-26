@@ -1,10 +1,65 @@
+name: CI
+on:
+  push:
+    branches: [ main ]
+    
 jobs:
   my_job:
     name: test self hosted runner
     runs-on: self-hosted
-on:
-  pull_request:
-    branches:
-    - main
-
   
+  # on:
+  # pull_request:
+  #   branches:
+  #   - main  
+
+    steps:
+    - name: Get current directory
+      run: pwd
+
+    - name: npm install, build and test
+      run: |
+        npm install
+        npm run build --if-present
+        npm test
+
+# jobs:
+#   my_job:
+#     name: test self hosted runner
+#     runs-on: self-hosted
+  
+#   on:
+#   pull_request:
+#     branches:
+#     - main  
+
+#     steps:
+#     - name: Get current directory
+#       run: pwd
+
+#     - name: npm install, build and test
+#       run: |
+#         npm install
+#         npm run build --if-present
+#         npm test
+
+
+# name: CI
+# on:
+#   push:
+#     branches: [ main ]
+# jobs:
+#   container-test-job:
+#     runs-on: ubuntu-latest
+#     container:
+#       image: node:18
+#       env:
+#         NODE_ENV: development
+#       ports:
+#         - 80
+#       volumes:
+#         - my_docker_volume:/volume_mount
+#       options: --cpus 1
+#     steps:
+#       - name: Check for dockerenv file
+#         run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
